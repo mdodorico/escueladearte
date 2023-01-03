@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Ingresar</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link th:href="@{/images/favicon.png}" rel="icon">
+    <link th:href="@{vendor/aos/aos.css}" rel="stylesheet">
+    <link th:href="@{vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
+    <link th:href="@{vendor/boxicons/css/boxicons.min.css}" rel="stylesheet">
+    <link th:href="@{vendor/glightbox/css/glightbox.min.css}" rel="stylesheet">
+    <link th:href="@{vendor/swiper/swiper-bundle.min.css}" rel="stylesheet">
+    <link th:href="@{css/style.css}" rel="stylesheet">
+  </head>
+  <body>
+  
+  <section id="login" class="d-flex align-items-center">
+    <div class="container">
+      <div class="box-1">
+        <div class="content-holder">
+          <h2>¡Hola!</h2>
+          <button class="button-1" onclick="signup()">Registrarse</button>
+          <button class="button-2" onclick="login()">Iniciar sesión</button>
+          <a role="button" th:href="@{/}" class="button-1" style="color: white">Inicio</a>
+        </div>
+      </div>
+      
+      <!-- INICIAR SESIÓN -->
+      <div class="box-2">
+        <div class="login-form-container">
+          <form th:action="@{/login}" method="post">
+            <h1>Iniciar sesión</h1>
+                
+            <div th:if="${param.error}">
+              <div class="alert alert-danger alert-dismissible fade show" role="alert"> 
+                  Error: revise usuario y contraseña 
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            </div>
+            <div th:if="${param.logout}">
+              <div class="alert alert-success alert-dismissible fade show" role="alert"> 
+                  Desconexión exitosa 
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            </div>
+            <div th:if="${msg != null}">
+                <p class="alert alert-danger alert-dismissible fade show" th:text="${msg}" role="alert"></p>
+            </div>
+	        
+	        <input type="text" name="email" id="email" class="input-field" placeholder="Email" required="required" /><br/>
+	        <input type="password" name="password" id="password" class="input-field" placeholder="Clave" required="required" /><br/>
+            <button class="login-button" type="submit" style="margin-top: 15px">Ingresar</button>
+            <div class="text-center" style="margin-top: 5%">
+				<a th:href="@{/forgot_password}">¿Olvidó la contraseña?</a>
+			</div>
+          </form>
+        </div>
+        
+        <!-- REGISTRARSE -->
+        <div class="signup-form-container">
+          <form th:action="@{/login/save}" method="POST" th:object="${user}" enctype="multipart/form-data">
+            <h1>Registrarse</h1>
+	            <input class="input-field" style="margin-bottom: 15px" id="firstName" name="firstName" th:field="*{firstName}" type="text" placeholder="Nombre" required="required" /><br/>
+	            <input class="input-field" style="margin-bottom: 15px" id="lastName" name="lastName" th:field="*{lastName}" type="text" placeholder="Apellido" required="required" /><br/>
+	            <input class="input-field" style="margin-bottom: 15px" id="email" name="email" th:field="*{email}" type="email" placeholder="Email" required="required" /><br/>
+	            <input class="input-field" style="margin-bottom: 15px" id="password" name="password" th:field="*{password}" type="password" placeholder="Clave" required="required" /><br/>
+	            <input type="file" class="form-control-file" style="margin-bottom: 10px" name="profilePicture" id="profilePicture">
+            <button class="signup-button" type="submit" style="margin-top: 15px">Registrarse</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    </section>
+    <script th:src="@{vendor/purecounter/purecounter_vanilla.js}"></script>
+    <script th:src="@{vendor/aos/aos.js}"></script>
+    <script th:src="@{vendor/glightbox/js/glightbox.min.js}"></script>
+    <script th:src="@{vendor/isotope-layout/isotope.pkgd.min.js}"></script>
+    <script th:src="@{vendor/swiper/swiper-bundle.min.js}"></script>
+    <script th:src="@{vendor/waypoints/noframework.waypoints.js}"></script>
+    <script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{vendor/bootstrap/js/bootstrap.js}"></script>
+    <script th:src="@{vendor/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{js/main.js}"></script>
+  </body>
+</html>

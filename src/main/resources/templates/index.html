@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Home</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+  <link th:href="@{/images/favicon.png}" rel="icon">
+  <link th:href="@{vendor/animate.css/animate.min.css}" rel="stylesheet">
+  <link th:href="@{vendor/aos/aos.css}" rel="stylesheet">
+  <link th:href="@{vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
+  <link th:href="@{vendor/boxicons/css/boxicons.min.css}" rel="stylesheet">
+  <link th:href="@{vendor/glightbox/css/glightbox.min.css}" rel="stylesheet">
+  <link th:href="@{vendor/swiper/swiper-bundle.min.css}" rel="stylesheet">
+  <link th:href="@{css/style.css}" rel="stylesheet">
+</head>
+
+<body>
+  <div id="header" class="fixed-top d-flex align-items-center header-transparent">
+     <header th:insert="fragments/header.html :: navbar"></header>
+  </div>
+
+  <section id="hero" class="d-flex justify-cntent-center align-items-center">
+    <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Bienvenido a <span>Van Gogh</span></h2>
+          <p class="animate__animated animate__fadeInUp">El objetivo de la escuela es generar un espacio de experimentación e investigación de diferentes materiales, técnicas y soportes en donde los alumnos amplíen el abanico de posibilidades a la hora de crear.</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Formación académica</h2>
+          <p class="animate__animated animate__fadeInUp">Contamos con un staff de docentes formados en universiades y escuelas altamente calificados para acompañar a cada alumno en su aprendizaje individual para ayudarlo a explotar al máximo sus habilidades y fortalezas.</p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Reconocimiento internacional</h2>
+          <p class="animate__animated animate__fadeInUp">La escuela participa todos los años de diferentes exposiciones tanto en el país como a nivel internacional. Los estudiantes que forman parte de estas muestras no solo tienen la posibilidad de hacerse conocer sino de formar lazos con otros artistas y escuelas.</p>
+        </div>
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+  </section>
+  <main id="main">
+
+    <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 video-box">
+            <img th:src="@{images/why-us.jpg}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
+            <div class="icon-box">
+              <h4 class="title"><a href="">Enseñanza personalizada</a></h4>
+              <p class="description">Cada alumno y cada aprendizaje es único. Algunos tienen talento natural, otros deben desarrollarlo a través del trabajo y 
+              la constancia. Por eso en Van Gogh nos aseguramos de que esté siempre acompañado y reciba el apoyo necesario para expresarse a través del arte.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="section-title">
+          <h2>Nosotros</h2>
+        </div>
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-5">
+            <img th:src="@{images/art-1.jpg}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-4">
+            <h3>Pintura sobre lienzo</h3>
+            <p class="fst-italic">
+                Proveemos todos los materiales necesarios para el desarrollo de las clases, los cuales quedan dentro del aula junto a los trabajos en proceso.
+            </p>
+            <ul>
+              <li><i class="bi bi-check"></i> Dirigido a: Interesados con poca experiencia en pintura, que deseen trabajar en un espacio de experimentación sobre los procesos creativos en la pintura.</li>
+              <li><i class="bi bi-check"></i> Requisitos para el alumno: Disposición abierta a la experimentación. Ropa cómoda y adecuada para trabajar.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-5 order-1 order-md-2">
+            <img th:src="@{images/architecture-1.jpg}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5 order-2 order-md-1">
+            <h3>Arquitectura</h3>
+            <p class="fst-italic">
+                Los conceptos impartidos en la escuela son fundamentos básicos de la arquitectura para proveerle al alumno de una base sólida en el tema.
+            </p>
+            <ul>
+              <li><i class="bi bi-check"></i> Dirigido a: todas aquellas personas que quieran aprender otra manera de mirar, mejorar y optimizar los espacios, así como diseñar bocetos generales de nuevas estructuras.</li>
+              <li><i class="bi bi-check"></i> Al final de cada año, el alumno realizará un proyecto de reforma de un espacio a elección para mejorar las condiciones de dicho lugar y flexibilizar su uso.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-5">
+            <img th:src="@{images/ceramic-1.jpg}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5">
+            <h3>Cerámica</h3>
+            <p class="fst-italic">
+                Se pretende que los/las participantes conozcan el vocabulario básico, los materiales específicos más comunes y sus lenguajes expresivos.
+            </p>
+            <p>La cerámica nos ayuda a controlar las emociones, a relajarnos, y a mejorar nuestra creatividad. Además de liberarnos estrés, puede aumentar nuestro 
+            optimismo, permitiendo que nos expresemos de una manera más libres y sentirnos más conformes con nosotros mismos. Puede mejorar nuestra concentración, 
+            escapando el estrés de la rutina, permitiendo que nos desenvolvemos de una mejor manera en nuestros campos de trabajo o de estudio.</p>
+          </div>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-5 order-1 order-md-2">
+            <img th:src="@{images/draw-1.jpg}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5 order-2 order-md-1">
+            <h3>Dibujo</h3>
+            <p class="fst-italic">
+               Pensado para todo aquel que deseen adentrarse en los artes del dibujo y la pintura y a quienes quieran profundizar sus conocimientos en el tema.
+            </p>
+            <p>
+               Se le propone a los alumnos una experiencia donde poder expresarse artísticamente, aprendiendo técnicas y desarrollando su estilo personal 
+               en dibujo, además de aprender a crear imágenes, colores, formas, luces y sombras.
+            </p>
+          </div>
+        </div>
+        
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-5">
+            <img th:src="@{images/sculpture-1.jpg}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5">
+            <h3>Escultura</h3>
+            <p class="fst-italic">
+                Los primeros ejercicios son para la educación visual y los conceptos elementales.
+            </p>
+            <p>Se propiciarán todo tipo de técnicas escultóricas como talla en madera, piedra, mármol , alabastro, telgopor, poliuretano expandido, modelados 
+            en arcilla con su correspondiente molderia y vaciado en yeso, cemento, acrílico, masillas plásticas y otros, a la cera perdida.
+            También se combinarán distintos materiales, técnicas directas en yeso, cemento, piedras graníticas y pátinas con tierras.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer th:insert="fragments/footer.html :: footer"></footer>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script th:src="@{vendor/purecounter/purecounter_vanilla.js}"></script>
+  <script th:src="@{vendor/aos/aos.js}"></script>
+  <script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+  <script th:src="@{vendor/glightbox/js/glightbox.min.js}"></script>
+  <script th:src="@{vendor/isotope-layout/isotope.pkgd.min.js}"></script>
+  <script th:src="@{vendor/swiper/swiper-bundle.min.js}"></script>
+  <script th:src="@{vendor/waypoints/noframework.waypoints.js}"></script>
+  <script th:src="@{js/main.js}"></script>
+ </body>
+
+</html>

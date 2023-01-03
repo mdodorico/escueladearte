@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Horarios clases</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+    <link th:href="@{/images/favicon.png}" rel="icon">
+    <link th:href="@{vendor/animate.css/animate.min.css}" rel="stylesheet">
+    <link th:href="@{vendor/aos/aos.css}" rel="stylesheet">
+    <link th:href="@{vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
+    <link th:href="@{vendor/boxicons/css/boxicons.min.css}" rel="stylesheet">
+    <link th:href="@{vendor/glightbox/css/glightbox.min.css}" rel="stylesheet">
+    <link th:href="@{vendor/swiper/swiper-bundle.min.css}" rel="stylesheet">
+    <link th:href="@{css/style.css}" rel="stylesheet">
+  </head>
+  <body>
+    <div id="header" class="fixed-top d-flex align-items-center ">
+      <header th:insert="fragments/header.html :: navbar"></header>
+    </div>
+    
+     <main id="main">
+      <section class="breadcrumbs">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>Horarios</h2>
+          </div>
+        </div>
+      </section>
+      
+      <section id="classes" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+        <div class="container">
+          <div class="table-responsive">
+            <table class="table table-bordered text-center">
+              <thead>
+                <tr class="bg-light-gray">
+                  <th class="text-uppercase"></th>
+                  <th class="text-uppercase">Lunes</th>
+                  <th class="text-uppercase">Martes</th>
+                  <th class="text-uppercase">Miércoles</th>
+                  <th class="text-uppercase">Jueves</th>
+                  <th class="text-uppercase">Viernes</th>
+                  <th class="text-uppercase">Sábado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="align-middle">09:00</td>
+                  <td>
+                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13">Pintura</span>
+                    <div class="margin-10px-top font-size14">9:00-10:30</div>
+                    <div class="font-size13 text-gray">Javier Díaz</div>
+                  </td>
+                  <td>
+                    <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Cerámica</span>
+                    <div class="margin-10px-top font-size14">9:00-10:30</div>
+                    <div class="font-size13 text-gray">Marta Navarro</div>
+                  </td>
+                  <td>
+                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Escultura</span>
+                    <div class="margin-10px-top font-size14">9:00-10:30</div>
+                    <div class="font-size13 text-gray">Gonzalo Blanco</div>
+                  </td>
+                  <td>
+                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Dibujo</span>
+                    <div class="margin-10px-top font-size14">9:00-10:30</div>
+                    <div class="font-size13 text-gray">Amanda Flores</div>
+                  </td>
+                  <td>
+                    <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Historia</span>
+                    <div class="margin-10px-top font-size14">9:00-10:30</div>
+                    <div class="font-size13 text-gray">Romina Prieto</div>
+                  </td>
+                  <td>
+                    <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Arquitectura</span>
+                    <div class="margin-10px-top font-size14">9:00-10:30</div>
+                    <div class="font-size13 text-gray">Sebastián Alvarez</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="align-middle">11:00</td>
+                  <td>
+                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Escultura</span>
+                    <div class="margin-10px-top font-size14">11:00-12:30</div>
+                    <div class="font-size13 text-gray">Gonzalo Blanco</div>
+                  </td>
+                  <td>
+                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Pintura</span>
+                    <div class="margin-10px-top font-size14">11:00-12:30</div>
+                    <div class="font-size13 text-gray">Javier Díaz</div>
+                  </td>
+                  <td>
+                    <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Historia</span>
+                    <div class="margin-10px-top font-size14">11:00-12:30</div>
+                    <div class="font-size13 text-gray">Romina Prieto</div>
+                  </td>
+                  <td>
+                    <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Cerámica</span>
+                    <div class="margin-10px-top font-size14">11:00-12:30</div>
+                    <div class="font-size13 text-gray">Marta Navarro</div>
+                  </td>
+                  <td>
+                    <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Arquitectura</span>
+                    <div class="margin-10px-top font-size14">11:00-12:30</div>
+                    <div class="font-size13 text-gray">Sebastián Alvarez</div>
+                  </td>
+                  <td class="bg-light-gray"></td>
+                </tr>
+                <tr>
+                  <td class="align-middle">13:00</td>
+                  <td>
+                    <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Historia</span>
+                    <div class="margin-10px-top font-size14">13:00-14:30</div>
+                    <div class="font-size13 text-gray">Romina Prieto</div>
+                  </td>
+                  <td class="bg-light-gray"></td>
+                  <td>
+                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Escultura</span>
+                    <div class="margin-10px-top font-size14">13:00-14:30</div>
+                    <div class="font-size13 text-gray">Gonzalo Blanco</div>
+                  </td>
+                  <td>
+                    <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Arquitectura</span>
+                    <div class="margin-10px-top font-size14">13:00-14:30</div>
+                    <div class="font-size13 text-gray">Sebastián Alvarez</div>
+                  </td>
+                  <td>
+                    <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Cerámica</span>
+                    <div class="margin-10px-top font-size14">13:00-14:30</div>
+                    <div class="font-size13 text-gray">Marta Navarro</div>
+                  </td>
+                  <td>
+                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Dibujo</span>
+                    <div class="margin-10px-top font-size14">13:00-14:30</div>
+                    <div class="font-size13 text-gray">Amanda Flores</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="align-middle">15:00</td>
+                  <td class="bg-light-gray"></td>
+                  <td>
+                    <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Historia</span>
+                    <div class="margin-10px-top font-size14">15:00-16:30</div>
+                    <div class="font-size13 text-gray">Romina Prieto</div>
+                  </td>
+                  <td>
+                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Pintura</span>
+                    <div class="margin-10px-top font-size14">15:00-16:30</div>
+                    <div class="font-size13 text-gray">Javier Díaz</div>
+                  </td>
+                  <td>
+                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Escultura</span>
+                    <div class="margin-10px-top font-size14">15:00-16:30</div>
+                    <div class="font-size13 text-gray">Gonzalo Blanco</div>
+                  </td>
+                  <td>
+                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Dibujo</span>
+                    <div class="margin-10px-top font-size14">15:00-16:30</div>
+                    <div class="font-size13 text-gray">Amanda Flores</div>
+                  </td>
+                  <td>
+                    <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Cerámica</span>
+                    <div class="margin-10px-top font-size14">15:00-16:30</div>
+                    <div class="font-size13 text-gray">Marta Navarro</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="align-middle">17:00</td>
+                  <td>
+                    <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Arquitectura</span>
+                    <div class="margin-10px-top font-size14">17:00-18:30</div>
+                    <div class="font-size13 text-gray">Sebastián Alvarez</div>
+                  </td>
+                  <td>
+                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Escultura</span>
+                    <div class="margin-10px-top font-size14">17:00-18:30</div>
+                    <div class="font-size13 text-gray">Gonzalo Blanco</div>
+                  </td>
+                  <td class="bg-light-gray"></td>
+                  <td>
+                    <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Arquitectura</span>
+                    <div class="margin-10px-top font-size14">17:00-18:30</div>
+                    <div class="font-size13 text-gray">Sebastián Alvarez</div>
+                  </td>
+                  <td>
+                    <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Cerámica</span>
+                    <div class="margin-10px-top font-size14">17:00-18:30</div>
+                    <div class="font-size13 text-gray">Marta Navarro</div>
+                  </td>
+                  <td>
+                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Escultura</span>
+                    <div class="margin-10px-top font-size14">17:00-18:30</div>
+                    <div class="font-size13 text-gray">Gonzalo Blanco</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <footer th:insert="fragments/footer.html :: footer"></footer>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+    <script th:src="@{vendor/purecounter/purecounter_vanilla.js}"></script>
+    <script th:src="@{vendor/aos/aos.js}"></script>
+    <script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{vendor/glightbox/js/glightbox.min.js}"></script>
+    <script th:src="@{vendor/isotope-layout/isotope.pkgd.min.js}"></script>
+    <script th:src="@{vendor/swiper/swiper-bundle.min.js}"></script>
+    <script th:src="@{vendor/waypoints/noframework.waypoints.js}"></script>
+    <script th:src="@{js/main.js}"></script>
+  </body>
+</html>

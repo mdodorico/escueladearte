@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Detalles</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+    <link th:href="@{/images/favicon.png}" rel="icon">
+    <link th:href="@{/vendor/animate.css/animate.min.css}" rel="stylesheet">
+    <link th:href="@{/vendor/aos/aos.css}" rel="stylesheet">
+    <link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
+    <link th:href="@{/vendor/boxicons/css/boxicons.min.css}" rel="stylesheet">
+    <link th:href="@{/vendor/glightbox/css/glightbox.min.css}" rel="stylesheet">
+    <link th:href="@{/vendor/swiper/swiper-bundle.min.css}" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="header" class="fixed-top d-flex align-items-center ">
+     <header th:insert="fragments/header.html :: navbar"></header>
+  </div>
+  <main id="main">
+   
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-8">
+             <img th:src="@{/images/portfolio/{img} (img=${work.image})}" class="img-fluid" alt="" width="60%" hight="60%">
+          </div>
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Información de la obra</h3>
+              <ul>
+                <li><strong>Nombre: </strong><span th:text="${work.name}"></span></li>
+                <li><strong>Autor: </strong><span th:text="${work.author}"></span></li>
+                <li><strong>Fecha: </strong><span th:text="${#dates.format(work.date, 'dd-MM-yyyy')}"></span></li>
+                <li><strong>Categoría: </strong><span th:text="${work.category.name}"></span></li>
+              </ul>
+            </div>
+            <div class="portfolio-description">
+              <h2>Descripción</h2>
+              <p th:text="${work.description}"></p>
+            </div>
+            <a onclick="history.back(-1)" class="btn btn-info btn-sm" style="color: white">Volver</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer th:insert="fragments/footer.html :: footer"></footer>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+    <script th:src="@{/vendor/purecounter/purecounter_vanilla.js}"></script>
+    <script th:src="@{/vendor/aos/aos.js}"></script>
+    <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/vendor/glightbox/js/glightbox.min.js}"></script>
+    <script th:src="@{/vendor/isotope-layout/isotope.pkgd.min.js}"></script>
+    <script th:src="@{/vendor/swiper/swiper-bundle.min.js}"></script>
+    <script th:src="@{/vendor/waypoints/noframework.waypoints.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+ </body>
+</html>

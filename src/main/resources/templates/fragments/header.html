@@ -1,0 +1,26 @@
+<div th:fragment="navbar" class="container d-flex justify-content-between align-items-center">
+    <div class="logo">
+      <h1 class="text-light">
+          <a th:href="@{/}"><span>Van Gogh</span></a>
+      </h1>
+    </div>
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li sec:authorize="isAnonymous() || hasAnyAuthority('Master', 'Admin', 'User')"><a th:href="@{/portfolio/gallery}">Trabajos</a></li>
+        <li sec:authorize="isAnonymous() || hasAnyAuthority('Master', 'Admin', 'User')"><a th:href="@{/team}">Docentes</a></li>
+        <li sec:authorize="isAnonymous() || hasAnyAuthority('Master', 'Admin', 'User')"><a th:href="@{/classes}">Horarios</a></li>
+        <li sec:authorize="isAnonymous() || hasAnyAuthority('Master', 'Admin', 'User')"><a th:href="@{/contact}">Contacto</a></li>
+        <li sec:authorize="hasAnyAuthority('Master', 'Admin')"><a th:href="@{/users/list}">Usuarios</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+      
+      <div sec:authorize="isAnonymous()" style="margin-left: 420px;">
+        <a th:href="@{/login}">Ingresar/registrarse</a>
+      </div>
+      
+      <ul sec:authorize="isAuthenticated()" style="margin-left: 265px;">
+         <a th:href="@{/logout}" style="font-size: 15px;"><i class="fa-solid fa-door-open" style="font-size: 14px;"></i>Salir</a>
+         <a th:href="@{/profile/personal}" title="Mi perfil"><img class="avatar" th:src="@{/images/users/{img} (img=${user.photo})}"/></a>
+      </ul>
+    </nav>
+</div>

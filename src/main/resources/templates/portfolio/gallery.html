@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Trabajos</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+    <link th:href="@{/images/favicon.png}" rel="icon">
+    <link th:href="@{/vendor/animate.css/animate.min.css}" rel="stylesheet">
+    <link th:href="@{/vendor/aos/aos.css}" rel="stylesheet">
+    <link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
+    <link th:href="@{/vendor/boxicons/css/boxicons.min.css}" rel="stylesheet">
+    <link th:href="@{/vendor/glightbox/css/glightbox.min.css}" rel="stylesheet">
+    <link th:href="@{/vendor/swiper/swiper-bundle.min.css}" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+  </head>
+  <body>
+    <div id="header" class="fixed-top d-flex align-items-center ">
+      <header th:insert="fragments/header.html :: navbar"></header>
+    </div>
+    <main id="main">
+      <section class="breadcrumbs">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>Trabajos de nuestros estudiantes y docentes</h2>
+          </div>
+        </div>
+      </section>
+      
+      <section class="portfolio">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-2">
+            <div class="d-inline-flex">
+              <form class="form-inline" th:action="@{/portfolio/search}" method="GET" th:object="${search}">
+                <select th:field="*{category.id}" class="form-select" aria-label="Default select example">
+                  <option th:value="${null}" selected> Todos</option>
+                  <option th:each="cat : ${categories}" th:value="${cat.id}" th:text="${cat.name}"></option>
+                </select> 
+                <br><button type="submit" class="btn btn-primary btn-sm mb-3">Buscar</button>
+                <a role="button" class="btn btn-success btn-sm" th:href="@{/portfolio/create}" sec:authorize="hasAnyAuthority('Master', 'Admin')" style="vertical-align: top; color: white; margin-bottom: 10px" title="Cargar trabajo"> Nuevo </a>
+              </form>
+             </div>
+            </div>
+          </div>
+
+          <div class="row portfolio-container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+           <div class="col-lg-4 col-md-6 portfolio-wrap" th:each="work : ${artwork}">
+            <div class="portfolio-item">
+              <img th:src="@{/images/portfolio/{img} (img=${work.image})}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3 th:text="${work.name}"></h3>
+                <div>
+                  <a th:href="@{/images/portfolio/{img} (img=${work.image})}" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="fa-solid fa-expand"></i></a>&nbsp;
+	              <a th:href="@{/portfolio/details/{id} (id=${work.id})}"><i class="fa-solid fa-plus"></i></a>&nbsp;
+	              <a th:href="@{/portfolio/edit/{id} (id=${work.id})}" sec:authorize="hasAnyAuthority('Master', 'Admin')"><i class="fa-regular fa-pen-to-square"></i></a>
+                </div>
+              </div>
+            </div>
+           </div>
+          </div>
+        </div>
+      </section>
+      
+    </main>
+    <footer th:insert="fragments/footer.html :: footer"></footer>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+    <script th:src="@{/vendor/purecounter/purecounter_vanilla.js}"></script>
+    <script th:src="@{/vendor/aos/aos.js}"></script>
+    <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/vendor/glightbox/js/glightbox.min.js}"></script>
+    <script th:src="@{/vendor/isotope-layout/isotope.pkgd.min.js}"></script>
+    <script th:src="@{/vendor/swiper/swiper-bundle.min.js}"></script>
+    <script th:src="@{/vendor/waypoints/noframework.waypoints.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+  </body>
+</html>

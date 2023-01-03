@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Contacto</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+    <link th:href="@{/images/favicon.png}" rel="icon">
+    <link th:href="@{vendor/animate.css/animate.min.css}" rel="stylesheet">
+    <link th:href="@{vendor/aos/aos.css}" rel="stylesheet">
+    <link th:href="@{vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
+    <link th:href="@{vendor/boxicons/css/boxicons.min.css}" rel="stylesheet">
+    <link th:href="@{vendor/glightbox/css/glightbox.min.css}" rel="stylesheet">
+    <link th:href="@{vendor/swiper/swiper-bundle.min.css}" rel="stylesheet">
+    <link th:href="@{css/style.css}" rel="stylesheet">
+  </head>
+  <body>
+    <div id="header" class="fixed-top d-flex align-items-center ">
+      <header th:insert="fragments/header.html :: navbar"></header>
+    </div>
+    <main id="main">
+      <section class="breadcrumbs">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>Contacto</h2>
+          </div>
+        </div>
+      </section>
+      
+      <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="info-box">
+                    <i class="bx bx-map"></i>
+                    <h3>Dirección</h3>
+                    <p>Cervantes 2944, CABA</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="info-box">
+                    <i class="bx bx-envelope"></i>
+                    <h3>Email</h3>
+                    <p>escuelarte.vangogh@gmail.com</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="info-box">
+                    <i class="bx bx-phone-call"></i>
+                    <h3>Teléfono</h3>
+                    <p>+54 11 4773 5170</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <form th:action="@{/message/save}" method="POST" th:object="${message}">
+                <div class="my-3">
+                  <div th:if="${msg != null}" class="alert alert-success alert-dismissible fade show" role="alert" th:text="${msg}">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input type="text" class="form-control" name="name" id="name" th:field="*{sender}" placeholder="Nombre" required>
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <input type="email" class="form-control" name="email" id="email" th:field="*{email}" placeholder="Email" required>
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                  <input type="text" class="form-control" name="subject" id="subject" th:field="*{subject}" placeholder="Asunto" required>
+                </div>
+                <div class="form-group mt-3">
+                  <textarea class="form-control" name="body" id="body" rows="6" th:field="*{body}" placeholder="Mensaje" required></textarea>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-info" style="color: white; margin-top: 10px">Enviar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="map mt-2">
+        <div class="container-fluid p-0">
+          <iframe src="https://www.google.com/maps/embed/v1/place?q=Cervantes+2944,+Buenos+Aires,+Argentina&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+      </section>
+    </main>
+    <footer th:insert="fragments/footer.html :: footer"></footer>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+    <script th:src="@{vendor/purecounter/purecounter_vanilla.js}"></script>
+    <script th:src="@{vendor/aos/aos.js}"></script>
+    <script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{vendor/glightbox/js/glightbox.min.js}"></script>
+    <script th:src="@{vendor/isotope-layout/isotope.pkgd.min.js}"></script>
+    <script th:src="@{vendor/swiper/swiper-bundle.min.js}"></script>
+    <script th:src="@{vendor/waypoints/noframework.waypoints.js}"></script>
+    <script th:src="@{js/main.js}"></script>
+  </body>
+</html>

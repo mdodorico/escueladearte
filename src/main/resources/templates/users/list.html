@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Usuarios</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+    <link th:href="@{/images/favicon.png}" rel="icon">
+    <link th:href="@{/vendor/animate.css/animate.min.css}" rel="stylesheet">
+    <link th:href="@{/vendor/aos/aos.css}" rel="stylesheet">
+    <link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
+    <link th:href="@{/vendor/boxicons/css/boxicons.min.css}" rel="stylesheet">
+    <link th:href="@{/vendor/glightbox/css/glightbox.min.css}" rel="stylesheet">
+    <link th:href="@{/vendor/swiper/swiper-bundle.min.css}" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+  </head>
+  <body>
+    <div id="header" class="fixed-top d-flex align-items-center ">
+      <header th:insert="fragments/header.html :: navbar"></header>
+    </div>
+    <main role="main">
+      <div class="container">
+        <form th:action="@{/users/delete}" th:object="${user}">
+          <section class="main-content">
+			<div class="container">
+				<h1>Usuarios registrados</h1>
+				<div th:if="${msg != null}" class="alert alert-success alert-dismissible fade show" role="alert" th:text="${msg}"></div>
+				<div th:if="${email != null}" class="alert alert-success alert-dismissible fade show" role="alert" th:text="${email}"></div>
+                <div th:if="${alert != null}" class="alert alert-danger alert-dismissible fade show" role="alert" th:text="${alert}"></div>
+                <div th:if="${error != null}" class="alert alert-danger alert-dismissible fade show" role="alert" th:text="${error}"></div>
+				<br><br>
+				<table class="table" id="usersListTable">
+					<thead>
+						<tr>
+							<th class="align-middle"></th>
+			                <th class="align-middle">Nombre</th>
+			                <th class="align-middle">Estado</th>
+			                <th class="align-middle">Rol</th>
+			                <th class="align-middle">Operaciones</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="user : ${users}">
+						    <td>
+                               <input type="checkbox" name="id" th:value="${user.id}" />
+                            </td>
+							<td>
+								<div class="user-info">
+									<div class="user-info__img">
+										<img th:src="@{/images/users/{img} (img=${user.photo})}">
+									</div>
+									<div class="user-info__basic">
+										<h5 class="mb-0" th:text="${user.firstName} + ' ' + ${user.lastName}"></h5>
+										<p class="text-muted mb-0" th:text="${user.email}"></p>
+									</div>
+								</div>
+							</td>
+							<td>
+							   <div th:switch="${user.enabled}">
+							     <span th:case="${true}" class="badge bg-success">Activo</span>
+								 <span th:case="${false}" class="badge bg-warning">Inactivo</span>
+							  </div>
+							</td>
+							<td th:text="${user.role.name}"></td>
+							<td>
+								<a th:href="@{/users/edit/{id} (id=${user.id})}" class="btn btn-info btn-sm" style="color: white" role="button">Editar</a>
+								<a th:href="@{/users/delete/{id} (id=${user.id}) }" class="btn btn-danger btn-sm" style="color: white" role="button" onclick="confirm('¿Estas seguro de eliminar este usuario?')">Eliminar</a>
+								<a th:href="@{/users/sendEmail/{id} (id=${user.id}) }" class="btn btn-secondary btn-sm" style="color: white" role="button" title="Reenviar email de verificación"  onclick="confirm('¿Reenviar email de verificación de cuenta?')">Email</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		  </section>
+		  <button class="btn btn-danger" type="submit" style="color: white;"onclick="confirm('¿Estas seguro de eliminar estos usuarios?')">Eliminar usuarios</button>
+        </form>
+        <a role="button" class="btn btn-success" th:href="@{/users/create}" style="color: white; margin-top: 1%; margin-bottom: 1%">Crear usuario</a>
+        <br />
+      </div>
+    </main>
+    <footer th:insert="fragments/footer.html :: footer"></footer>
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center" title="Volver arriba">
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+    <script th:src="@{/vendor/purecounter/purecounter_vanilla.js}"></script>
+    <script th:src="@{/vendor/aos/aos.js}"></script>
+    <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/vendor/glightbox/js/glightbox.min.js}"></script>
+    <script th:src="@{/vendor/isotope-layout/isotope.pkgd.min.js}"></script>
+    <script th:src="@{/vendor/swiper/swiper-bundle.min.js}"></script>
+    <script th:src="@{/vendor/waypoints/noframework.waypoints.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+  </body>
+</html>
