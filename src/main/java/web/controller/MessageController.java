@@ -28,7 +28,7 @@ public class MessageController {
 	public String guardar(@Valid @ModelAttribute("message") Message message, RedirectAttributes attributes) 
 			throws MessagingException, UnsupportedEncodingException{
 		
-		String toAddress = "mariana8390@gmail.com";
+		String toAddress = "escuelarte.vangogh@gmail.com";
 		String fromAddress = "escuelarte.vangogh@gmail.com";
 		String senderName = "Escuela Van Gogh";
 		String subject = "Nuevo mensaje recibido";
